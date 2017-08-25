@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/myanimations.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/user.css">
 
     <!-- These are Angular files -->
     <script src="assets/js/angular.js"></script>
@@ -31,7 +33,7 @@
     <script src="services/userServices.js"></script>
     <script src="services/authServices.js"></script>
 
-    <title>Kevin Gatera</title>
+    <title>RHS Portal</title>
 
   </head>
 
@@ -39,73 +41,26 @@
     <!-- mainController is attached here so that it can be called in every page as needed -->
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Kevin Gatera</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li>
-                <a href="/about">About</a>
-            </li>
-            <li>
-                <a href="/contact">Contact</a>
-            </li>
 
-            <li class="dropdown" ng-show="mainCtrl.loginStatus">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li>
-                <a ng-show="mainCtrl.loginStatus" href"#"> Hello {{ mainCtrl.username }} </a>
-            </li>
-            <li>
-                <a ng-show="!mainCtrl.loginStatus" href="/login">Login</a>
-            </li>
-            <li>
-                <a ng-show="!mainCtrl.loginStatus" href="/register">Register</a>
-            </li>
-            <li>
-                <a ng-show="mainCtrl.loginStatus" ng-click="mainCtrl.doLogout();" href="#">Logout</a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="/"><i class="glyphicon glyphicon-phone"></i>RHS Portal</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ng-show="mainCtrl.loginStatus" href"#"> Hello {{ mainCtrl.username }} </a></li>
+                    <li><a ng-show="!mainCtrl.loginStatus" href="/login">Login</a></li>
+                    <li><a ng-show="!mainCtrl.loginStatus" href="/register">Register</a></li>
+                    <li><a ng-show="mainCtrl.loginStatus" ng-click="mainCtrl.doLogout();" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <div class="bs-docs-masthead" id="content" role="main">
-           <div class="container">
-               <h1><br>MAINTENANCE MODE</h1>
-           </div>
-    </div>
-
-    <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div ng-show="mainCtrl.loginStatus" class="jumbotron">
-        <h1>Welcome to {{ mainCtrl.username }}'s portfolio server</h1>
-        <p>This is work in progress. (last modified: Tue, August 16th, 2017)</p>
-      </div>
-      <div ng-view></div>
 
 
-    </div> <!-- /container -->
+    <div ng-view></div>
 
 
     <!-- Bootstrap core JavaScript

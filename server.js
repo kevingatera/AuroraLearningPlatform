@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var path = require('path');
-var port = process.env.PORT || 8085;
+var port = process.env.PORT || 8086;
 var router = express.Router(); // Used to generate tokens
 var appRoutes = require('./serverapp/routes/api.js')(router);
 var social = require('./serverapp/passport/passport')(app, passport) ;
@@ -18,7 +18,7 @@ app.use('/api', appRoutes); // This comes last so that it cause the parsed data
 /* Also, the '/api' will help us differentiate the frontend routes from the
     backend ones by appending '// http://localhost:27017/api' right in middle. */
 
-mongoose.connect('mongodb://localhost:27017/kgatewebapp_db', function(err){
+mongoose.connect('mongodb://localhost:27017/AuroraLearningPatform', function(err){
     if (err) {
         console.log('Not connected to MongoDB. What happenned? \n' + err );
     }

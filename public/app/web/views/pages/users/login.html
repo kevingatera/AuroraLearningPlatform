@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="assets/css/user-login.css">
+<link rel="stylesheet" href="assets/css/Google-Style-Login.css">
+
 <div class="page-header">
     <h1> User Login</h1>
 </div>
@@ -58,21 +61,64 @@
     </div>
 </div>
 
-<div class="row row-show-hide-message" ng-show="facebook.errorMessage">
-    <div class="alert alert-danger">
-        <!-- Error message for facebook login -->
-        {{ facebook.errorMessage }}
+
+
+<div class="jumbotron hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0">
+                    <div class="login-card">
+                        <h5 class="text-center text-muted">Login with your academic bridge credentials</h5><img src="assets/img/avatar_2x.png" class="profile-img-card">
+                        <p class="profile-name-card"> </p>
+                        <form class="form-horizontal form-signin">
+                            <input class="form-control" type="tel" placeholder="Registration Number">
+                            <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+                            <div class="checkbox">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">Remember me</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+<div class="row row-show-hide-message" ng-show="facebook.errorMessage">
+  <div class="alert alert-danger">
+    <!-- Error message for facebook login -->
+    {{ facebook.errorMessage }}
+  </div>
 </div>
 <div class="row row-show-hide-message" ng-show="twitter.errorMessage">
-    <div class="alert alert-danger">
-        <!-- Error message for facebook login -->
-        {{ twitter.errorMessage }}
-    </div>
+  <div class="alert alert-danger">
+    <!-- Error message for facebook login -->
+    {{ twitter.errorMessage }}
+  </div>
 </div>
 <div class="row row-show-hide-message" ng-show="google.errorMessage">
-    <div class="alert alert-danger">
-        <!-- Error message for facebook login -->
-        {{ google.errorMessage }}
-    </div>
+  <div class="alert alert-danger">
+    <!-- Error message for facebook login -->
+    {{ google.errorMessage }}
+  </div>
 </div>
+
+
+<section class="testimonials">
+<h2 class="text-center">Riviera High School. More than a community.</h2></section>
+
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>RHS Portal</h5></div>
+            <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+        </div>
+    </div>
+</footer>
