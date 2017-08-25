@@ -1,0 +1,78 @@
+<div class="page-header">
+    <h1> User Login</h1>
+</div>
+
+<!-- The following basically means
+    that when this form is submitted activate this function
+-->
+
+<form ng-submit="mainCtrl.doLogin(loginData)">
+    <!-- Username -->
+    <label> Username:</label>
+    <input class="form-control" type="text" name="username"
+            placeholder="please enter your username"
+            ng-model="$parent.mainCtrl.loginData.username"/>
+    <br />
+    <!-- Password -->
+    <label> Password: </label>
+    <input class="form-control" type="password" name="password"
+            placeholder="please enter your password"
+            ng-model="$parent.mainCtrl.loginData.password"/>
+    <br />
+    <button class="btn btn-success" type="submit">LOGIN</button>&nbsp
+
+    <button type="button" class="btn btn-primary" style="background-color: #3B5998"  ng-click="mainCtrl.facebookFix()">Facebook</button>&nbsp
+
+    <button type="button" class="btn btn-primary" style="background-color: #1DA1F2"  ng-click="mainCtrl.twitterFix()">Twitter</button>
+
+    <button type="button" class="btn btn-primary" style="background-color: #DB4437"  ng-click="mainCtrl.googleFix()">Google</button>
+
+</form>
+
+<br />
+
+<!-- This is the loading stuff that comes when we're waiting
+     that the server answers -->
+<div class="jumbotron text-center" ng-show="mainCtrl.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p>
+        Loading ...
+    </p>
+</div>
+
+<br />
+
+<!-- We need to  -->
+
+<div class="row row-show-hide-message" ng-show="mainCtrl.successMessage">
+    <div class="alert alert-success">
+        <!-- Success Message -->
+        {{ mainCtrl.successMessage }}
+    </div>
+</div>
+
+<div class="row row-show-hide-message" ng-show="mainCtrl.errorMessage">
+    <div class="alert alert-danger">
+        <!-- Error message -->
+        {{ mainCtrl.errorMessage }}
+    </div>
+</div>
+
+<div class="row row-show-hide-message" ng-show="facebook.errorMessage">
+    <div class="alert alert-danger">
+        <!-- Error message for facebook login -->
+        {{ facebook.errorMessage }}
+    </div>
+</div>
+<div class="row row-show-hide-message" ng-show="twitter.errorMessage">
+    <div class="alert alert-danger">
+        <!-- Error message for facebook login -->
+        {{ twitter.errorMessage }}
+    </div>
+</div>
+<div class="row row-show-hide-message" ng-show="google.errorMessage">
+    <div class="alert alert-danger">
+        <!-- Error message for facebook login -->
+        {{ google.errorMessage }}
+    </div>
+</div>
