@@ -1,3 +1,21 @@
+require("appdynamics").profile({
+ controllerHostName: 'blue2017082322185821.saas.appdynamics.com',
+ controllerPort: 443,
+ // If SSL, be sure to enable the next line
+ controllerSslEnabled: true,
+ accountName: 'blue2017082322185821',
+ accountAccessKey: 'y69t29s0nei7',
+ applicationName: 'test-app',
+ tierName: 'test-tier',
+ nodeName: 'process' // The controller will automatically append the node name with a unique number
+});
+
+var StatsD = require('node-dogstatsd').StatsD;
+var dogstatsd = new StatsD();
+
+// Increment a counter.
+dogstatsd.increment('page.views');
+
 var express = require('express');
 var app = express();
 var morgan = require('morgan');
@@ -20,7 +38,7 @@ app.use('/api', appRoutes); // This comes last so that it cause the parsed data
 
 mongoose.connect('mongodb://localhost:27017/AuroraLearningPatform', function(err){
     if (err) {
-        console.log('Not connected to MongoDB. What happenned? \n' + err );
+        console.log('Not connected to MongoDB. What happenned? \n => ' + err );
     }
     else {
         console.log('OK.. Connected to the database');

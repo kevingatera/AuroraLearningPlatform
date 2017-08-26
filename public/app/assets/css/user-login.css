@@ -12,6 +12,7 @@
   background-size:cover;
   border:none;
   resize:both;
+  height: 83vh;
 }
 
 @media (min-width:992px) {

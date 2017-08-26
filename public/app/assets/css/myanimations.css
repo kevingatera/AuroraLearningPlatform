@@ -23,6 +23,11 @@ header .navbar {
     animation:spin 1s infinite;
 }
 
+.jumbotron.text-center {
+  padding: 7px 0px 0px 0px;
+  background: none;
+}
+
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform:rotate(360deg); }
@@ -46,7 +51,7 @@ header .navbar {
 
 .bs-docs-masthead, .bs-docs-header {
     position: relative;
-    padding: 30px 15px;
+    padding: 10px 5px;
     color: #cdbfe3;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);

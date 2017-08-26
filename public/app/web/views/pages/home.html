@@ -1,3 +1,22 @@
+<!-- Fixed navbar -->
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="/"><i class="glyphicon glyphicon-phone"></i>RHS Portal</a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-show="mainCtrl.loginStatus" href"#"> Hello {{ mainCtrl.username }} </a></li>
+                <li><a ng-show="mainCtrl.loginStatus" href="/dashboard">Dashboard</a></li>
+                <li><a ng-show="!mainCtrl.loginStatus" href="/login">Login</a></li>
+                <li><a ng-show="!mainCtrl.loginStatus" href="/register">Register</a></li>
+                <li><a ng-show="mainCtrl.loginStatus" ng-click="mainCtrl.doLogout();" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="jumbotron hero">
     <div class="container">
         <div class="row">
@@ -6,9 +25,14 @@
                     <div class="screen"></div><img src="assets/img/iphone.svg" class="device"></div>
             </div>
             <div class="col-md-6 col-md-pull-3 get-it">
-                <h1>RHS Portal App</h1>
-                <p class="lead text-danger">Welcome to the RHS Students-Staff Hub. You can communicate inform yourself or inform others privately or publicly</p>
-                <p><a class="btn btn-primary btn-lg" role="button" href="#"><i class="fa fa-google"></i> Available on the GOODLE PLAY</a><a class="btn btn-success btn-lg" role="button" href="#"><i class="fa fa-windows"></i> Available on WINDOWS STORE</a></p>
+                <h1 class="bg-primary">RHS Portal App</h1>
+                <p class="text-center lead text-danger bg-primary">
+                  Welcome to the RHS Students-Staff Hub. You can communicate inform yourself or inform others privately or publicly
+                </p>
+                <p>
+                  <a class="btn btn-primary btn-lg" role="button" href="#"><i class="fa fa-google"></i> Available on the GOOGLE PLAY</a>
+                  <a class="btn btn-success btn-lg" role="button" href="#"><i class="fa fa-apple"></i> Available on APPLE STORE</a>
+                </p>
             </div>
         </div>
     </div>
@@ -16,11 +40,11 @@
 
 <!-- Testimonials -->
 <section class="testimonials">
-    <h2 class="text-center">Riviera High School. It's more than a community.</h2></section>
+    <h2 class="text-center">Riviera High School. It's more than a school, it's a community.</h2></section>
 <section class="features">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row icon-features">
                     <div class="col-xs-4 icon-feature"><i class="glyphicon glyphicon-cloud"></i>
                         <p>Real-time </p>

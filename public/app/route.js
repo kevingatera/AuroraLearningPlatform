@@ -30,7 +30,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     .when('/logout', {
         templateUrl: 'web/views/pages/users/logout.html',
-        authenticated: true
+        authenticated: false
     })
 
     .when('/profile', {
@@ -80,6 +80,17 @@ var app = angular.module('appRoutes', ['ngRoute'])
         authenticated: false
     })
 
+    // Dashboard routes
+
+    .when('/dashboard', {
+        templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
+        authenticated: true
+    })
+
+
+
+    // The default Route
+
     .otherwise({
         redirectTo: '/'
     });
@@ -106,7 +117,7 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
         else if (next.$$route.authenticated === false) {
           if(Auth.isLoggedIn()){
             event.preventDefault();
-            $location.path('/profile')
+            $location.path('/dashboard')
             }
         }
         /* ..... ADDITIONS NEEDED TO TAKE CARE OF THE Cannot Read property of undefined */

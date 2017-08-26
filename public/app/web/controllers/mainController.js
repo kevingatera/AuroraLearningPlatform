@@ -72,7 +72,7 @@ angular.module('mainController', ['authServices'])
                     app.successMessage = data.data.message + '... Redirecting';
                     // Then redirect the user to the homepage with a 2sec timeout
                     $timeout(function(){
-                        $location.path('/about');
+                        $location.path('/dashboard');
                         // clear the login form so no one can see it
                         /* NOTE: Use {} instead of '' to avoid TypeError */
                         app.loginData = {};
