@@ -1,6 +1,7 @@
 /* This is the controller which is connected to the registration page */
 
-angular.module('userControllers', ['userServices']).controller('registrationController', function($http, $location, $timeout, oneUser) { // Pass in '$http'
+angular.module('userControllers', ['userServices'])
+.controller('registrationController', function($http, $location, $timeout, oneUser) { // Pass in '$http'
     var app = this;
     this.registerUser = function(registrationData, valid) {
         console.log(registrationData);

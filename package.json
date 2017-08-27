@@ -15,14 +15,17 @@
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0",
     "nuclide": "^0.244.0",
+    "oclazyload": "^1.1.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "tinymce": "^4.6.5"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
-    "flow-bin": "^0.47.0"
+    "flow-bin": "^0.47.0",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,10 +1,11 @@
-var app = angular.module('appRoutes', ['ngRoute'])
-.config(function($routeProvider, $locationProvider){
+var app = angular.module('appRoutes', ['ngRoute','ui.router'])
+.config(function($routeProvider, $locationProvider, $stateProvider){
 
     $routeProvider
 
     .when('/', {
-        templateUrl: 'web/views/pages/home.html'
+        templateUrl: 'web/views/pages/home.html',
+        authenticated: false
     })
 
     .when('/about', {
@@ -89,6 +90,12 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
 
 
+    /* .when('/tinymce', {
+        templateUrl:'web/views/pages/users/tools/tinymce.html',
+        controller: 'tinymceController'
+    }) */
+
+
     // The default Route
 
     .otherwise({
@@ -99,7 +106,26 @@ var app = angular.module('appRoutes', ['ngRoute'])
         enabled: true,
         requireBase: false
     });
+
+    $stateProvider
+
+    // .state('dashboard', {
+    //     // url: '/dashboard'
+    //     // templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
+    //     // authenticated: true
+    // })
+
+    .state('tinymce', {
+        url: '/tinymce',
+        templateUrl: "web/views/pages/users/tools/tinymce.html",
+        controller: 'tinymceController'
+    });
+
+
+
 });
+
+
 // Restricting certain routes or pages and checking if those rules are followed
 app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
@@ -123,5 +149,10 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
         /* ..... ADDITIONS NEEDED TO TAKE CARE OF THE Cannot Read property of undefined */
     })
 }])
+
+/*
+app.controller("MyCtrl", function($ocLazyLoad) {
+  $ocLazyLoad.load(() => {alert('Yes')}));
+}); */
 
 // console.log('ROUTE.js file... OK');

@@ -18,16 +18,24 @@
     <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/user.css">
 
+    <!-- Temp CSS -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
+
     <!-- These are Angular files -->
     <script src="assets/js/angular.js"></script>
     <script src="assets/js/angular-route.js"></script>
     <script src="assets/js/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 
     <!-- These are CONFIG and Routes files -->
     <script src="app.js"></script>
     <script src="route.js"></script>
     <script src="web/controllers/userControl.js"></script>
     <script src="web/controllers/mainController.js"></script>
+    <script src="web/controllers/tinymceController.js"></script>
 
     <!-- These are Angular services -->
     <script src="services/userServices.js"></script>
@@ -45,12 +53,43 @@
     <div ng-view></div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
   </body>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!--  Checkbox, Radio & Switch Plugins -->
+  <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+  <!--  Charts Plugin -->
+  <script src="assets/js/chartist.min.js"></script>
+
+  <!--  Notifications Plugin    -->
+  <script src="assets/js/bootstrap-notify.js"></script>
+
+  <!-- <script type="text/javascript">
+  $(document).ready(function() {
+
+    demo.initChartist();
+
+    $.notify({
+      icon: 'pe-7s-gift',
+      message: "Welcome to <b>RHS Hub</b> - a beautiful freebie for every student and Staff member"
+
+    }, {
+      type: 'info',
+      timer: 4000
+    });
+
+  });
+  </script> -->
+
+  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script src="assets/js/tinymce.js"></script>
+
 </html>

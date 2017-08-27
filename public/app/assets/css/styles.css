@@ -1,0 +1,8 @@
+
+/* Restructure the Timetable for small screens */
+@media screen and (max-width: 450px) and (min-width: 320px){
+  body > div > div > div.main-panel > div > div > div:nth-child(2) > div {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

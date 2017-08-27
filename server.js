@@ -10,6 +10,8 @@ require("appdynamics").profile({
  nodeName: 'process' // The controller will automatically append the node name with a unique number
 });
 
+/* CODE FOR DATADOG */
+
 var StatsD = require('node-dogstatsd').StatsD;
 var dogstatsd = new StatsD();
 
@@ -36,7 +38,7 @@ app.use('/api', appRoutes); // This comes last so that it cause the parsed data
 /* Also, the '/api' will help us differentiate the frontend routes from the
     backend ones by appending '// http://localhost:27017/api' right in middle. */
 
-mongoose.connect('mongodb://localhost:27017/AuroraLearningPatform', function(err){
+mongoose.connect('mongodb://localhost:27017/AuroraLearningPatform', { useMongoClient: true } , function(err){
     if (err) {
         console.log('Not connected to MongoDB. What happenned? \n => ' + err );
     }

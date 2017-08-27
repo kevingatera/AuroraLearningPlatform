@@ -6,6 +6,8 @@ angular.module("myPortfolioApp", [
     'authServices',
     'userControllers',
     'userServices',
+    'tinymceController',
+    'ui.tinymce',
     'ngAnimate', // this is for angular-animate
 ]).config(function($httpProvider) {
     /* use $httpProvider to intercept all http requests and use
