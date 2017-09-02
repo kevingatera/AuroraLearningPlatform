@@ -18,8 +18,10 @@
     <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/user.css">
 
+
     <!-- Temp CSS -->
     <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/xeditable.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
@@ -30,16 +32,22 @@
     <script src="assets/js/angular-animate.js"></script>
     <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 
+
     <!-- These are CONFIG and Routes files -->
     <script src="app.js"></script>
     <script src="route.js"></script>
     <script src="web/controllers/userControl.js"></script>
     <script src="web/controllers/mainController.js"></script>
-    <script src="web/controllers/tinymceController.js"></script>
+    <!-- <script src="web/controllers/tinymceController.js"></script> -->
+
+    <script src="web/controllers/todoController.js"></script>
 
     <!-- These are Angular services -->
     <script src="services/userServices.js"></script>
     <script src="services/authServices.js"></script>
+
+    <!-- Temp JS -->
+    <script src="assets/js/xeditable.min.js"></script>
 
     <title>RHS Portal</title>
 
@@ -47,8 +55,6 @@
 
   <body ng-app="myPortfolioApp" ng-controller="mainController as mainCtrl" ng-show="mainCtrl.loadContent" ng-cloak>
     <!-- mainController is attached here so that it can be called in every page as needed -->
-
-
 
     <div ng-view></div>
 

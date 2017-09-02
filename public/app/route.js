@@ -88,6 +88,21 @@ var app = angular.module('appRoutes', ['ngRoute','ui.router'])
         authenticated: true
     })
 
+    .when('/student-profile', {
+        templateUrl: 'web/views/pages/users/dashboard/user.html',
+        authenticated: true
+    })
+
+
+    .when('/event-pictures', {
+        templateUrl: 'web/views/pages/users/dashboard/event.html',
+        authenticated: true
+    })
+
+    .when('/house-coroner', {
+        templateUrl: 'web/views/pages/users/dashboard/house-coroner.html',
+        authenticated: true
+    })
 
 
     /* .when('/tinymce', {
@@ -122,7 +137,6 @@ var app = angular.module('appRoutes', ['ngRoute','ui.router'])
     });
 
 
-
 });
 
 
@@ -131,7 +145,9 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
         // console.log(Auth.isLoggedIn());
         // Check what should be accessed when the user is already authenticated
+
         if(next.$$route.authenticated === true){
+
             if(!Auth.isLoggedIn()){
                 // Prevent access if not authenticated
                 event.preventDefault();

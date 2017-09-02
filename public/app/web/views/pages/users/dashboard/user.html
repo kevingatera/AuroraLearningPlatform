@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html>
+<title>Your Profile</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light Bootstrap Dashboard by Creative Tim</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/demo.css">
-    <link rel="stylesheet" href="assets/css/light-bootstrap-dashboard.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
-</head>
 
-<body>
-    <div class="wrapper">
-    <div class="sidebar" data-color="green" data-image="assets/img/sidebar-5.jpg">
+<div class="wrapper">
+<div class="sidebar" data-color="green" data-image="assets/img/sidebar-4.jpg">
 
-    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+<!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
- <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="http://www.rivierahighschool.com" class="simple-text">
+<div class="sidebar-wrapper">
+  <div class="logo">
+                <a href="http://www.rivierahighschool.org" class="simple-text">
                     RHS Hub
                 </a>
             </div>
@@ -51,17 +36,16 @@
                 <li>
                     <a href="House Corner.html">
                         <i class="pe-7s-map-marker"></i>
-
-                        <p>House Corner</p>
+                        <p>Your House Corner</p>
                     </a>
-                </li>                
-                <li>
-                    <a href="calendar.html">
-                        <i class="pe-7s-user"></i>
-                        <p>School Calendar</p>
                 </li>
-                <li>
-                    <a href="notifications.html">
+                 <li>
+                    <a href="calendar.html">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>School Calendar</p>
+                    </a>
+               <li>
+                    <a href="Notifications.html">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
@@ -69,7 +53,7 @@
 			</ul>
         </div>
     </div>
-    
+
     <div class="main-panel">
 		<nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
@@ -101,18 +85,12 @@
 									</p>
                               </a>
                               <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
+                              <li><a href="notifications.html">Notification 1</a></li>
+                              <li><a href="notifications.html">Notification 2</a></li>
+                              <li><a href="notifications.html">Notification 3</a></li>
+                              <li><a href="notifications.html">Notification 4</a></li>
+                              <li><a href="notifications.html">Another notification</a></li>
                               </ul>
-                        </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-								<p class="hidden-lg hidden-md">Search</p>
-                            </a>
                         </li>
                     </ul>
 
@@ -130,14 +108,12 @@
 									</p>
 
                               </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
+                             <ul class="dropdown-menu">
+                                <li><a href="mailto:garmand@outlook.com?Subject=Feedback">Feedback</a></li>
+                                <li><a href="mailto:garmand@outlook.com?Subject=Report%20a%20problem">Report a problem</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">About RHS Hub...</a></li>
                               </ul>
                         </li>
                         <li>
@@ -156,101 +132,93 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Edit Profile</h4>
-                            </div>
-                            <div class="content">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" placeholder="Email">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="First Name" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Home Address" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                            </div>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value=""> </textarea>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
+                <div class="card">
+                  <div class="header">
+                    <h4 class="title">Edit Profile</h4>
+                  </div>
+                  <div class="content">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="dropdown">
+                            <label>Student's House</label>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <b class="caret hidden-sm hidden-xs"></b>
+                              <span class="notification hidden-sm hidden-xs">Choose your house</span>
+                              <p class="hidden-lg hidden-md"> Choose your House<b class="caret"></b></p>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="">Ubutwari</a></li>
+                              <li><a href="">Akagera</a></li>
+                              <li><a href="">Ndabaga</a></li>
+                              <li><a href="">Muhabura</a></li>
+                            </ul>
+                          </li>
+                          <input Disabled type="text" class="form-control" placeholder="Choose your House Above" value="Akagera">
                         </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label>Name</label>
+                          <input type="text" class="form-control" placeholder="Name" value="Umutesi Vanessa">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" placeholder="Email" value="umutesivanessa@gmail.com">
+                        </div>
+                      </div>
                     </div>
+
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>City</label>
+                          <input type="text" class="form-control" placeholder="City" value="Gisenyi">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Country</label>
+                          <input type="text" class="form-control" placeholder="Country" value="Rwanda">
+                        </div>
+                      </div>
+                      <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>About Me</label>
+                        </div>
+                        <textarea rows="5" class="form-control" placeholder="Talk about yourself" value="My Name is Umutesi Vanessa I am in Year 11 and I would like to be an engineer in future"></textarea>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+              </div>
+
                     <div class="col-md-4">
                         <div class="card card-user">
                             <div class="image">
-                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&amp;fm=jpg&amp;h=300&amp;q=75&amp;w=400" alt="...">
+                                <img src="assets\img\faces\Riviera00008.jpg" alt="...">
                             </div>
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="...">
+                                    <img class="avatar border-gray" src="assets/img/faces/IMG_20170714_181440.jpg" alt="...">
 
                                       <h4 class="title"><br>
                                          <small></small>
                                       </h4>
                                     </a>
                                 </div>
-                                <p class="description text-center"> 
+                                <p class="description text-center">
                                 </p>
                             </div>
                             <hr>
@@ -273,56 +241,18 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="Dashboard.html">
                                 Home
                             </a>
                         </li>
-                      
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    © <script>document.write(new Date().getFullYear())</script> <a href="http://www.riverahighschool.com">Riviera High Schoold</a>, The Oasis of Knowledge
+                    <!-- © <script>document.write(new Date().getFullYear())</script> -->
+                    <a href="mailto:garmand@outlook.com">CE Technologies</a>, Made with love for a better future
                 </p>
             </div>
         </footer>
 
     </div>
 </div>
-
-
-
-
-    <!--   Core JS Files   -->
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
-	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
-
-	<!--  Charts Plugin -->
-	<script src="assets/js/chartist.min.js"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="assets/js/light-bootstrap-dashboard.js"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
-    <script src="assets/js/bootstrap-notify.js"></script>
-    <script src="assets/js/bootstrap-select.js"></script>
-    <script src="assets/js/chartist.min.js"></script>
-    <script src="assets/js/demo.js"></script>
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <script src="assets/js/light-bootstrap-dashboard.js"></script>
-</body>
-
-</html>

@@ -6,10 +6,13 @@ angular.module("myPortfolioApp", [
     'authServices',
     'userControllers',
     'userServices',
-    'tinymceController',
     'ui.tinymce',
+    // 'todoCtrl',
+    'todoController',
+    'xeditable',
     'ngAnimate', // this is for angular-animate
-]).config(function($httpProvider) {
+])
+.config(function($httpProvider) {
     /* use $httpProvider to intercept all http requests and use
         AuthInterceptorsFactory to append a token to each and every one of them */
     $httpProvider.interceptors.push('AuthInterceptors');

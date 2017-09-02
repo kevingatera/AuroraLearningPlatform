@@ -1,6 +1,6 @@
 /* This controller won't go in routes as I need it to have acces to everything
     in the 'myPortfolioApp' */
-angular.module('mainController', ['authServices'])
+angular.module('mainController', ['authServices', 'xeditable'])
 .controller('mainController', function($http, $timeout, $location, Auth, $rootScope, $window){
     // console.log('Testing mainController......OK');
     var app = this;
