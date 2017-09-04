@@ -6,10 +6,12 @@ var app = angular.module('todoController', [])
 })
 
 .controller('todoCtrl', function($scope) {
+      $scope.selected = false;
       $scope.todoList = [];
       $scope.todoInput="";
       $scope.todoAdd = function() {
           console.log("Added new item");
+          console.log($scope.todoList);
           if ($scope.todoInput!="") {
           	$scope.todoList.push({todoText:$scope.todoInput, done:false});
           }
@@ -17,13 +19,22 @@ var app = angular.module('todoController', [])
           // console.log($scope.todoList);
       };
 
-      $scope.remove = function() {
+      $scope.remove = function(x) {
+        $scope.change(x);
+        console.log("Removing item");
+        console.log($scope.todoList);
           var oldList = $scope.todoList;
           $scope.todoList = [];
           angular.forEach(oldList, function(x) {
               if (!x.done) $scope.todoList.push(x);
           });
       };
+
+      $scope.change = function(x) {
+        console.log("X is " + x.done + " then")
+        x.done = true;
+        console.log("X becomes " + x.done);
+      }
 })
 
 

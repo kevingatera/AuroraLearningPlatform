@@ -116,25 +116,23 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">What's Trending</h4>
-                                <p class="category">School News</p>
-                            </div>
-                            <div class="content">
-                                <div ></div>
-
-                                <div class="footer">
-                                    <div class="legend">
-
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i>
-                                    </div>
-                                </div>
-                            </div>
+                      <div class="card">
+                        <div class="header">
+                          <h4 class="title">What's Trending</h4>
+                          <p class="category">School News</p>
                         </div>
+                        <div class="content">
+                          <div ></div>
+
+                          <div class="footer">
+                            <div class="legend"></div>
+                            <hr>
+                            <div class="stats">
+                              <i class="fa fa-clock-o"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
 										<div class="col-md-6" ng-controller="todoCtrl">
@@ -145,8 +143,8 @@
                             </div>
                             <div class="header">
                               <form ng-submit="todoAdd()">
-                                <input style="width:82%" type="text" ng-model="todoInput" size="50" placeholder="Add New">
-                                <input type="submit" value="Add New">
+                                <input style="width:80%" type="text" ng-model="todoInput" size="50" placeholder="Add New">
+                                <input class="btn btn-success" type="submit" value="Add New" style="padding:4px">
                               </form>
                             </div>
                             <div class="content">
@@ -155,121 +153,36 @@
                                         <tbody>
                                             <tr ng-repeat="x in todoList">
                                               <td>
-                                                <input value="" data-toggle="checkbox" type="checkbox" ng-model="x.done">
-                                                <span ng-bind="x.todoText"></span>
-
+                                                  <label class="checkbox" ng-click="remove(x)">
+                                                      <span class="icons">
+                                                        <span class="first-icon fa fa-square-o"></span>
+                                                        <span class="second-icon fa fa-check-square-o"></span>
+                                                      </span>
+                                                      <span class="icons">
+                                                        <span class="first-icon fa fa-square-o"></span>
+                                                        <span class="second-icon fa fa-check-square-o"></span>
+                                                      </span>
+                                                      <input value="" data-toggle="checkbox" type="checkbox" ng-model="x.done">
+                                                  </label>
                                               </td>
+                                              <td>
+                                                <!-- <span ng-bind="x.todoText"></span> -->
+                                                <a editable-text="x.todoText">{{ x.todoText || 'empty' }}</a>
+                                              </td>
+
+                                              <!-- <td class="td-actions text-right">
+                                                  <button type="button" rel="tooltip" title="Edit Task" class="btntes btn-info btn-simple btn-xs">
+                                                      <i class="fa fa-edit"></i>
+                                                  </button>
+                                                  <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                      <i class="fa fa-times"></i>
+                                                  </button>
+                                              </td> -->
+
+                                              <td></td>
+
                                             </tr>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <span class="icons">
-                                                          <span class="first-icon fa fa-square-o"></span>
-                                                          <span class="second-icon fa fa-check-square-o"></span>
-                                                        </span>
-                                                        <span class="icons">
-                                                          <span class="first-icon fa fa-square-o"></span>
-                                                          <span class="second-icon fa fa-check-square-o"></span>
-                                                        </span>
-                                                        <input value="" data-toggle="checkbox" type="checkbox" ng-model="x.done">
-                                                    </label>
-                                                </td>
-                                                <td>GSHGJSAGJHS</td>
-
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox checked">
-                                                        <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input value="" data-toggle="checkbox" checked="" type="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td></td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btntes btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox checked">
-                                                        <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input value="" data-toggle="checkbox" checked="" type="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td>                  </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input value="" data-toggle="checkbox" type="checkbox">
-                                                    </label>
-                                                </td>
-                                                <!-- <td></td> -->
-                                                <td><a editable-text="user.name">{{ user.name || 'empty' }}</a></td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input value="" data-toggle="checkbox" type="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td></td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><span class="icons"><span class="first-icon fa fa-square-o"></span><span class="second-icon fa fa-check-square-o"></span></span><input value="" data-toggle="checkbox" type="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td></td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
