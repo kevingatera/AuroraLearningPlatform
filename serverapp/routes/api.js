@@ -96,6 +96,11 @@ module.exports = function(router) {
       })
     })
 
+    // API route for articles
+    router.post('/article', function(req, res){
+      
+    })
+
     /* USER LOGIN ROUTE */
     // This will look like https://$servername/api/authenticate
     router.post('/authenticate', function(req, res) {
