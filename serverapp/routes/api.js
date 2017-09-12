@@ -97,8 +97,8 @@ module.exports = function(router) {
     })
 
     // API route for articles
-    router.post('/article', function(req, res){
-      
+    router.get('/article', function(req, res){
+      res.json({success: true, message:'Yesss!'});
     })
 
     /* USER LOGIN ROUTE */
@@ -159,7 +159,7 @@ module.exports = function(router) {
                 }
             });
         } else {
-            res.json({success: false, message: 'Failure: NO token provided'})
+            res.json({success: false, message: 'Failure: NOi token provided'})
         }
     })
 
