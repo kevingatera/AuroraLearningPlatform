@@ -7,3 +7,5 @@
 *.bk
 *.bak
 *~
+
+nohup.out

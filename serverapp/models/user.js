@@ -79,6 +79,7 @@ var UserSchema = new Schema({
     }
 });
 
+// Encrypting the password
 UserSchema.pre('save', function(next) {
     var user = this; //Whatever the user runs in the middleware
     bcrypt.hash(user.password, null, null, function(err, hash){

@@ -4,6 +4,7 @@
   "description": "This serves as a backend to all my portfolio apps",
   "main": "server.js",
   "dependencies": {
+    "angular-ui-router": "^1.0.3",
     "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",

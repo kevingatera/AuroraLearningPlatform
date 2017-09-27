@@ -83,8 +83,9 @@ angular.module('authServices', [])
     var AuthInterceptorsFactory = {} // create it as an Object;
 
     AuthInterceptorsFactory.request = function(config){
-        var token = AuthToken.getToken(); // Check if the token exists
+        var token = AuthToken.getToken();
 
+        // Check if the token exists
         if(token) {
             config.headers['x-access-token'] = token;
         }
