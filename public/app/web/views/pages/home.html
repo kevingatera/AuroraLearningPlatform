@@ -48,7 +48,7 @@
       <h2 class="text-center">Register now.</h2>
       <div class="row center-block">
         <div class="col-md-5 col-center-block">
-          <form name="regForm" ng-submit="register.registerUser(registrationData, regForm.$valid)" novalidate class="center-block">
+          <form name="regForm" ng-submit="register.registerUser(registrationData, regForm.$valid)" novalidate>
             <!-- Put it in a div so that it shows a red/green box by checking if:
                   - it is valid has been touched (ie isn't pristine)
                 and it won't be submitted if:
