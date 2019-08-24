@@ -1,7 +1,7 @@
 // This will demonstrate the article model
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt');
 
 
 var articleSchema = new Schema({
@@ -13,7 +13,7 @@ var articleSchema = new Schema({
   title: {
     type: String,
     required: true
-  }
+  },
   description: {
     type: String,
     required: false,

@@ -1,7 +1,7 @@
 /* Tjis file contains te user model */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcryptjs');
 var titlize = require('mongoose-title-case'); // Used to make our titlized
 var validate = require('mongoose-validator'); // used to avlidate the user entries beforte they go to the database
 
