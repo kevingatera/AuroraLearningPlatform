@@ -9,6 +9,7 @@
     "angular": "^1.7.8",
     "angular-ui-router": "^1.0.22",
     "aws-sdk": "^2.517.0",
+    "axios": "^0.19.0",
     "bcryptjs": "*",
     "body-parser": "^1.19.0",
     "core-js": "^3.2.1",
@@ -26,6 +27,7 @@
     "passport-facebook": "^3.0.0",
     "passport-google-oauth": "^2.0.0",
     "passport-twitter": "*",
+    "request": "^2.88.0",
     "sharp": "^0.23.0",
     "tinymce": "^5.0.14"
   },

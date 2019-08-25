@@ -89,3 +89,8 @@ typings/
 
 
 routes/temp
+
+serverapp\routes\temp\uploads
+
+package-lock.json
+

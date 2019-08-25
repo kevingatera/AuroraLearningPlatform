@@ -5,10 +5,9 @@ var S3 = require('../helpers/AWSS3');
 var AWS = require('aws-sdk');
 var multer = require('multer');
 var jwt = require('jsonwebtoken');
+var request = require('request');
+var axios = require('axios');
 var secret = 'testingSecretFormula';
-
-var credentials = new AWS.SharedIniFileCredentials({ profile: 'default' });
-AWS.config.credentials = credentials;
 
 module.exports = function (router) {
     // Form validation mechanism
@@ -101,11 +100,11 @@ module.exports = function (router) {
             }
         })
     })
-    
+
     // Replace <Subscription Key> with your valid subscription key.
     const subscriptionKey = '384a2381543b4fadaa26f8202c1d4bc3';
     const uriBase =
-        'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze';
+        'https://hackathon-2019.cognitiveservices.azure.com/vision/v2.0';
 
     const imageUrl =
         'https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg';
@@ -115,7 +114,7 @@ module.exports = function (router) {
         'details': '',
         'language': 'en'
     };
-    
+
     const analyze_image_options = {
         uri: uriBase,
         qs: params,
@@ -125,7 +124,7 @@ module.exports = function (router) {
             'Ocp-Apim-Subscription-Key': subscriptionKey
         }
     };
-    
+
     router.get('/analyzeimage', function (req, res) {
         // res.json({ success: true, message: 'Yesss!' });
 
@@ -150,7 +149,7 @@ module.exports = function (router) {
     router.post(
         '/upload',
         uploading.single("file" /* name attribute of <file> element in your form */),
-        (req, res) => {
+        (req, callback) => {
 
             const handleError = (err, res) => {
                 res
@@ -160,41 +159,57 @@ module.exports = function (router) {
             };
 
             const tempPath = req.file.path;
+            var imageName = "testName8789798.png";
 
-            S3.upload(tempPath, "testName.png");
-
-            router.post(analyze_image_options, (error, response, body) => {
-                if (error) {
-                    console.log('Error: ', error);
-                    return;
-                }
-                let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-                console.log('JSON Response\n');
-                console.log(jsonResponse);
+            S3.upload(tempPath, imageName).then((data, data2) => {
+                // console.log(data);
             });
 
-            // const targetPath = path.join(uploading.dest, "./image.png");
-            // if (path.extname(req.file.originalname).toLowerCase() === ".png") {
-            //     fs.rename(tempPath, targetPath, err => {
-            //         if (err) return handleError(err, res);
+            // var s3location = "https://s3-" + "us-east-1" + ".amazonaws.com/" + [yourBucket]/[yourCollectionName]/[yourFolderName]/[yourKeyName]
+            var s3location = "https://aurora-marks.s3.amazonaws.com/" + imageName;
 
-            //         S3.upload(targetPath, "testName.png");
+            // request.post(analyze_image_options, (error, _response, body) => {
+            //     if (error) {
+            //         console.log('Error: ', error);
+            //         return;
+            //     }
+            //     let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+            //     console.log('JSON Response\n');
+            //     console.log(jsonResponse);
+            // });
 
-            //         res
-            //             .status(200)
-            //             .contentType("text/plain")
-            //             .end("File uploaded!");
-            //     });
-            // } else {
-            //     fs.unlink(tempPath, err => {
-            //         if (err) return handleError(err, res);
+            var handwrittenURI = uriBase + "/recognizeText";
+            axios.post(handwrittenURI, '{"url": ' + '"' + s3location + '"}', {
+                params: {
+                    'mode': 'Handwritten'
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Ocp-Apim-Subscription-Key': subscriptionKey
+                }
+            })
+                .then((res) => {
+                    // console.log(`statusCode: ${res.status}`)
 
-            //         res
-            //             .status(403)
-            //             .contentType("text/plain")
-            //             .end("Only .png files are allowed!");
-            //     });
-            // }
+                    var getTextOperationsResult = res.headers["operation-location"];
+                    if (res.status === 202 && getTextOperationsResult !== undefined) {
+                        axios.get(getTextOperationsResult, {
+                            headers: {
+                                'Ocp-Apim-Subscription-Key': subscriptionKey
+                            }
+                        })
+                            .then((res) => {
+                                // console.log(`statusCode: ${res.status}`)
+                                if (typeof res.data.recognitionResult !== "undefined") {
+                                    var grades = res.data.recognitionResult.lines[0].text;
+                                    console.log(grades);
+
+
+                                    callback.json({ success: true, data: grades, status: 200 });
+                                }
+                            })
+                    }
+                })
         }
     );
 

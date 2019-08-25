@@ -15,8 +15,8 @@ class AWSS3 {
         this.config = {
             // current version of Amazon S3 API (see: https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html)
             apiVersion: "2006-03-01",
-            accessKeyId: "AKIAYHQ6TPVCY6PXOYFC", // process.env.AWS_S3_ACCESS_KEY_ID,
-            secretAccessKey: "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", // process.env.AWS_S3_SECRET_ACCESS_KEY,
+            accessKeyId: "AKIAYHQ6TPVC5OITBA74", // process.env.AWS_S3_ACCESS_KEY_ID,
+            secretAccessKey: "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", // process.env.AWS_S3_SECRET_ACCESS_KEY,
             region: "us-east-1" // process.env.AWS_S3_REGION
         };
 
