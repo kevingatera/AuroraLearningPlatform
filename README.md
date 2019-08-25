@@ -1,4 +1,4 @@
-# AURORA Learning platform (RHS Hub)
+# AURORA Learning platform (Aurora Learning Platform)
 
 This is an experimental learning platform that I've built during the summer 2017
 as a productive pass-time and in collaboration with my younger brother Armand GATERA who is

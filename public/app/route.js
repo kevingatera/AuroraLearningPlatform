@@ -1,154 +1,164 @@
-var app = angular.module('appRoutes', ['ngRoute','ui.router'])
-.config(function($routeProvider, $locationProvider, $stateProvider){
+var app = angular.module('appRoutes', ['ngRoute', 'ui.router'])
+    .config(function ($routeProvider, $locationProvider, $stateProvider) {
 
-    $routeProvider
+        $routeProvider
 
-    .when('/', {
-        templateUrl: 'web/views/pages/home.html',
-        authenticated: false
-    })
+            .when('/', {
+                templateUrl: 'web/views/pages/home.html',
+                authenticated: false
+            })
 
-    .when('/about', {
-        templateUrl: 'web/views/pages/about.html'
-    })
+            .when('/about', {
+                templateUrl: 'web/views/pages/about.html'
+            })
 
-    .when('/contact', {
-        templateUrl: 'web/views/pages/contact.html'
-    })
+            .when('/contact', {
+                templateUrl: 'web/views/pages/contact.html'
+            })
 
-    .when('/register', {
-        templateUrl: 'web/views/pages/users/register.html',
-        controller: 'registrationController',
-        controllerAs: 'register', // This is the name to user in your app
-        authenticated: false // Is this route used when user is authenticated
-    })
+            .when('/register', {
+                templateUrl: 'web/views/pages/users/register.html',
+                controller: 'registrationController',
+                controllerAs: 'register', // This is the name to user in your app
+                authenticated: false // Is this route used when user is authenticated
+            })
 
-    .when('/login', {
-        templateUrl: 'web/views/pages/users/login.html',
-        authenticated: false
-        // controller: ''
-    })
+            .when('/login', {
+                templateUrl: 'web/views/pages/users/login.html',
+                authenticated: false
+                // controller: ''
+            })
 
-    .when('/logout', {
-        templateUrl: 'web/views/pages/users/logout.html',
-        authenticated: false
-    })
+            .when('/logout', {
+                templateUrl: 'web/views/pages/users/logout.html',
+                authenticated: false
+            })
 
-    .when('/profile', {
-        templateUrl: 'web/views/pages/users/profile.html',
-        authenticated: true
-    })
+            .when('/profile', {
+                templateUrl: 'web/views/pages/users/profile.html',
+                authenticated: true
+            })
 
-    .when('/facebook/:token', {
-        templateUrl: 'web/views/pages/users/social/social.html',
-        controller: 'facebookController',
-        controllerAs: 'facebook',
-        authenticated: true
-    })
+            .when('/facebook/:token', {
+                templateUrl: 'web/views/pages/users/social/social.html',
+                controller: 'facebookController',
+                controllerAs: 'facebook',
+                authenticated: true
+            })
 
-    .when('/fberror', {
-        templateUrl: 'web/views/pages/users/login.html',
-        controller: 'facebookController',
-        controllerAs: 'facebook',
-        authenticated: false
-    })
+            .when('/fberror', {
+                templateUrl: 'web/views/pages/users/login.html',
+                controller: 'facebookController',
+                controllerAs: 'facebook',
+                authenticated: false
+            })
 
-    .when('/twitter:token', {
-        templateUrl: 'web/views/pages/users/login.html',
-        controller: 'twitterController',
-        controllerAs: 'twitter',
-        authenticated: false
-    })
+            .when('/twitter:token', {
+                templateUrl: 'web/views/pages/users/login.html',
+                controller: 'twitterController',
+                controllerAs: 'twitter',
+                authenticated: false
+            })
 
-    .when('/twittererror', {
-        templateUrl: 'web/views/pages/users/login.html',
-        controller: 'googleController',
-        controllerAs: 'google',
-        authenticated: false
-    })
+            .when('/twittererror', {
+                templateUrl: 'web/views/pages/users/login.html',
+                controller: 'googleController',
+                controllerAs: 'google',
+                authenticated: false
+            })
 
-    .when('/google:token', {
-        templateUrl: 'web/views/pages/users/login.html',
-        controller: 'googleController',
-        controllerAs: 'google',
-        authenticated: false
-    })
+            .when('/google:token', {
+                templateUrl: 'web/views/pages/users/login.html',
+                controller: 'googleController',
+                controllerAs: 'google',
+                authenticated: false
+            })
 
-    .when('/googleerror', {
-        templateUrl: 'web/views/pages/users/login.html',
-        controller: 'facebookController',
-        controllerAs: 'facebook',
-        authenticated: false
-    })
+            .when('/googleerror', {
+                templateUrl: 'web/views/pages/users/login.html',
+                controller: 'facebookController',
+                controllerAs: 'facebook',
+                authenticated: false
+            })
 
-    // Dashboard routes
+            // Dashboard routes
 
-    .when('/dashboard', {
-        templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
-        authenticated: true
-    })
+            .when('/dashboard', {
+                templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
+                authenticated: true
+            })
 
-    .when('/student-profile', {
-        templateUrl: 'web/views/pages/users/dashboard/user.html',
-        authenticated: true
-    })
-
-
-    .when('/event-pictures', {
-        templateUrl: 'web/views/pages/users/dashboard/event.html',
-        authenticated: true
-    })
-
-    .when('/house-coroner', {
-        templateUrl: 'web/views/pages/users/dashboard/house-coroner.html',
-        authenticated: true
-    })
+            .when('/student-profile', {
+                templateUrl: 'web/views/pages/users/dashboard/user.html',
+                authenticated: true
+            })
 
 
-    /* .when('/tinymce', {
-        templateUrl:'web/views/pages/users/tools/tinymce.html',
-        controller: 'tinymceController'
-    }) */
+            .when('/event-pictures', {
+                templateUrl: 'web/views/pages/users/dashboard/event.html',
+                authenticated: true
+            })
+            
+                        .when('/academics', {
+                            templateUrl: 'web/views/pages/users/dashboard/academics.html',
+                            authenticated: true
+                        })
+            
+            .when('/financials', {
+                templateUrl: 'web/views/pages/users/dashboard/financials.html',
+                authenticated: true
+            })
+
+            .when('/house-coroner', {
+                templateUrl: 'web/views/pages/users/dashboard/house-coroner.html',
+                authenticated: true
+            })
 
 
-    // The default Route
+            /* .when('/tinymce', {
+                templateUrl:'web/views/pages/users/tools/tinymce.html',
+                controller: 'tinymceController'
+            }) */
 
-    .otherwise({
-        redirectTo: '/'
+
+            // The default Route
+
+            .otherwise({
+                redirectTo: '/'
+            });
+
+        $locationProvider.html5Mode({ // This is used to remove the # sign from url
+            enabled: true,
+            requireBase: false
+        });
+
+        $stateProvider
+
+            // .state('dashboard', {
+            //     // url: '/dashboard'
+            //     // templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
+            //     // authenticated: true
+            // })
+
+            .state('tinymce', {
+                url: '/tinymce',
+                templateUrl: "web/views/pages/users/tools/tinymce.html",
+                controller: 'tinymceController'
+            });
+
+
     });
-
-    $locationProvider.html5Mode({ // This is used to remove the # sign from url
-        enabled: true,
-        requireBase: false
-    });
-
-    $stateProvider
-
-    // .state('dashboard', {
-    //     // url: '/dashboard'
-    //     // templateUrl: 'web/views/pages/users/dashboard/dashboard.html',
-    //     // authenticated: true
-    // })
-
-    .state('tinymce', {
-        url: '/tinymce',
-        templateUrl: "web/views/pages/users/tools/tinymce.html",
-        controller: 'tinymceController'
-    });
-
-
-});
 
 
 // Restricting certain routes or pages and checking if those rules are followed
-app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location) {
-    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+app.run(['$rootScope', 'Auth', '$location', function ($rootScope, Auth, $location) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
         // console.log(Auth.isLoggedIn());
         // Check what should be accessed when the user is already authenticated
 
-        if(next.$$route.authenticated === true){
+        if (next.$$route.authenticated === true) {
 
-            if(!Auth.isLoggedIn()){
+            if (!Auth.isLoggedIn()) {
                 // Prevent access if not authenticated
                 event.preventDefault();
                 // redirect to a home instead of an empty window
@@ -157,9 +167,9 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
         }
         // Check what should be accessed when the user is NOT authenticated
         else if (next.$$route.authenticated === false) {
-          if(Auth.isLoggedIn()){
-            event.preventDefault();
-            $location.path('/dashboard')
+            if (Auth.isLoggedIn()) {
+                event.preventDefault();
+                $location.path('/dashboard')
             }
         }
         /* ..... ADDITIONS NEEDED TO TAKE CARE OF THE Cannot Read property of undefined */

@@ -72,11 +72,8 @@
             this.clickListener();
             var menuPadding = parseInt(menu.css('padding-top')) + parseInt(menu.css('padding-bottom')) + parseInt(menu.css('border-top-width')) + parseInt(menu.css('border-bottom-width'));
             if (this.options.size == 'auto') {
-                
-                // Creative Tim Changes: We changed the regular function made in bootstrap-select with this function so the getSize() will not be triggered one million times per second while you scroll.
-                
-                var getSize = debounce(function() {
-                     var selectOffset_top_scroll = selectOffset_top - $(window).scrollTop();
+                    var getSize = debounce(function() {
+                    var selectOffset_top_scroll = selectOffset_top - $(window).scrollTop();
                     var windowHeight = $(window).innerHeight();
                     var menuExtras = menuPadding + parseInt(menu.css('margin-top')) + parseInt(menu.css('margin-bottom')) + 2;
                     var selectOffset_bot = windowHeight - selectOffset_top_scroll - selectHeight - menuExtras;

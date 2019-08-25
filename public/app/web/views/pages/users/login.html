@@ -3,118 +3,117 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="/"><i class="glyphicon glyphicon-phone"></i>RHS Portal</a>
-                <button class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse" id="navcol-1" ng-class="{collapse: isCollapsed}">
-                <ul class="nav navbar-nav navbar-right"></ul>
-            </div>
-        </div>
-    </nav>
+  <div class="container">
+    <div class="navbar-header"><a class="navbar-brand navbar-link" href="/"><i class="glyphicon glyphicon-phone"></i>Aurora Portal</a>
+      <button class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse" id="navcol-1" ng-class="{collapse: isCollapsed}">
+      <ul class="nav navbar-nav navbar-right"></ul>
+    </div>
+  </div>
+</nav>
 
 <!-- Login screen -->
 <div class="jumbotron hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-md-offset-0">
-                    <div class="login-card">
-                        <h5 class="text-center text-muted">Login with your school credentials</h5>
-                        <img src="assets/img/avatar_2x.png" class="profile-img-card">
-                        <p class="profile-name-card"> </p>
-                        <form ng-submit="mainCtrl.doLogin(loginData)" class="form-horizontal form-signin">
-                            <!-- Username -->
-                            <label> Username:</label>
-                            <input class="form-control" type="text" name="username"
-                                    placeholder="please enter your username"
-                                    ng-model="$parent.mainCtrl.loginData.username"/>
-                            <br />
-                            <!-- Password -->
-                            <label> Password: </label>
-                            <input class="form-control" type="password" name="password"
-                                    placeholder="please enter your password"
-                                    ng-model="$parent.mainCtrl.loginData.password"/>
-                            <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-0">
+        <div class="login-card">
+          <h5 class="text-center text-muted">Login with your school credentials</h5>
+          <img src="assets/img/avatar_2x.png" class="profile-img-card">
+          <p class="profile-name-card"> </p>
+          <form ng-submit="mainCtrl.doLogin(loginData)" class="form-horizontal form-signin">
+            <!-- Username -->
+            <label> Username:</label>
+            <input class="form-control" type="text" name="username" placeholder="please enter your username"
+              ng-model="$parent.mainCtrl.loginData.username" />
+            <br />
+            <!-- Password -->
+            <label> Password: </label>
+            <input class="form-control" type="password" name="password" placeholder="please enter your password"
+              ng-model="$parent.mainCtrl.loginData.password" />
+            <br />
 
-                            <div class="checkbox">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Remember me</label>
-                                </div>
-                            </div>
+            <div class="checkbox">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Remember me</label>
+              </div>
+            </div>
 
-                            <br />
+            <br />
 
-                            <button class="btn btn-success" type="submit" ng-show="!mainCtrl.loading">LOGIN</button>&nbsp
+            <button class="btn btn-success" type="submit" ng-show="!mainCtrl.loading">LOGIN</button>&nbsp
 
-                            <!-- <button type="button" class="btn btn-primary" style="background-color: #3B5998"  ng-click="mainCtrl.facebookFix()">Facebook</button>&nbsp
+            <!-- <button type="button" class="btn btn-primary" style="background-color: #3B5998"  ng-click="mainCtrl.facebookFix()">Facebook</button>&nbsp
 
                             <button type="button" class="btn btn-primary" style="background-color: #1DA1F2"  ng-click="mainCtrl.twitterFix()">Twitter</button>
 
                             <button type="button" class="btn btn-primary" style="background-color: #DB4437"  ng-click="mainCtrl.googleFix()">Google</button> -->
 
-                            <div class="jumbotron text-center" ng-show="mainCtrl.loading">
-                              <span class="glyphicon glyphicon-repeat spinner"></span>
-                              <p>
-                                Loading ...
-                              </p>
-                            </div>
-
-                            <div class="row row-show-hide-message" ng-show="mainCtrl.successMessage">
-                              <div class="alert alert-success">
-                                <!-- Success Message -->
-                                {{ mainCtrl.successMessage }}
-                              </div>
-                            </div>
-
-                            <div class="row row-show-hide-message" ng-show="mainCtrl.errorMessage">
-                              <div class="alert alert-danger">
-                                <!-- Error message -->
-                                {{ mainCtrl.errorMessage }}
-                              </div>
-                            </div>
-
-                            <div class="row row-show-hide-message" ng-show="facebook.errorMessage">
-                              <div class="alert alert-danger">
-                                <!-- Error message for facebook login -->
-                                {{ facebook.errorMessage }}
-                              </div>
-                            </div>
-                            <div class="row row-show-hide-message" ng-show="twitter.errorMessage">
-                              <div class="alert alert-danger">
-                                <!-- Error message for facebook login -->
-                                {{ twitter.errorMessage }}
-                              </div>
-                            </div>
-                            <div class="row row-show-hide-message" ng-show="google.errorMessage">
-                              <div class="alert alert-danger">
-                                <!-- Error message for facebook login -->
-                                {{ google.errorMessage }}
-                              </div>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
+            <div class="jumbotron text-center" ng-show="mainCtrl.loading">
+              <span class="glyphicon glyphicon-repeat spinner"></span>
+              <p>
+                Loading ...
+              </p>
             </div>
+
+            <div class="row row-show-hide-message" ng-show="mainCtrl.successMessage">
+              <div class="alert alert-success">
+                <!-- Success Message -->
+                {{ mainCtrl.successMessage }}
+              </div>
+            </div>
+
+            <div class="row row-show-hide-message" ng-show="mainCtrl.errorMessage">
+              <div class="alert alert-danger">
+                <!-- Error message -->
+                {{ mainCtrl.errorMessage }}
+              </div>
+            </div>
+
+            <div class="row row-show-hide-message" ng-show="facebook.errorMessage">
+              <div class="alert alert-danger">
+                <!-- Error message for facebook login -->
+                {{ facebook.errorMessage }}
+              </div>
+            </div>
+            <div class="row row-show-hide-message" ng-show="twitter.errorMessage">
+              <div class="alert alert-danger">
+                <!-- Error message for facebook login -->
+                {{ twitter.errorMessage }}
+              </div>
+            </div>
+            <div class="row row-show-hide-message" ng-show="google.errorMessage">
+              <div class="alert alert-danger">
+                <!-- Error message for facebook login -->
+                {{ google.errorMessage }}
+              </div>
+            </div>
+          </form>
+
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h5>RHS Portal</h5></div>
-            <div class="col-sm-6 social-icons">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a></div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h5>Aurora Portal</h5>
+      </div>
+      <div class="col-sm-6 social-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a></div>
     </div>
+  </div>
 </footer>

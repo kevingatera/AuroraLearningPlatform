@@ -1,15 +1,14 @@
-
 <div class="wrapper">
-  <div class="sidebar" data-color="green" data-image="../img/Riviera00008.jpg">
+  <div class="sidebar" data-color="green" data-image="../img/africa-elephant.jpg">
     <!--
         Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
         Tip 2: you can also add an image using data-image tag
     -->
     <div class="sidebar-wrapper">
       <div class="logo">
-              <a href="http://www.rivierahighschool.org" class="simple-text">
-                  RHS Hub
-              </a>
+        <a href="#" class="simple-text">
+          Aurora Learning Platform
+        </a>
       </div>
 
       <ul class="nav">
@@ -21,31 +20,37 @@
         <li>
           <a href="/student-profile">
             <i class="pe-7s-user"></i>
-              <p>STUDENT PROFILE</p>
+            <p>STUDENT PROFILE</p>
           </a>
         </li>
         <li>
-          <a href="/event-pictures">
+          <a href="/calendar">
             <i class="pe-7s-news-paper"></i>
-              <p>SCHOOL CALENDAR</p>
+            <p>SCHOOL CALENDAR</p>
           </a>
         </li>
         <li>
           <a href="/house-coroner">
             <i class="pe-7s-map-marker"></i>
-              <p>STUDENT WELFARE</p>
+            <p>STUDENT WELFARE</p>
           </a>
         </li>
         <li>
-          <a href="/calendar">
+          <a href="/academics">
             <i class="pe-7s-study"></i>
-              <p>Student academics</p>
+            <p>Student academics</p>
+          </a>
+        </li>
+        <li>
+          <a href="/financials">
+            <i class="pe-7s-cash"></i>
+            <p>Financials</p>
           </a>
         </li>
         <li>
           <a href="/notifications">
             <i class="pe-7s-bell"></i>
-              <p>Notifications</p>
+            <p>Notifications</p>
           </a>
         </li>
       </ul>
@@ -55,223 +60,270 @@
   </div>
 
 
-<div class="main-panel">
-  <nav class="navbar navbar-default navbar-fixed">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Dashboard</a>
+  <div class="main-panel">
+    <nav class="navbar navbar-default navbar-fixed">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dashboard</a>
+        </div>
+        <div class="navbar-collapse" id="navcol-1" ng-class="{collapse: isCollapsed}">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="open"></li>
+            <li class="dropdown">
+              <a aria-expanded="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-globe"></i>
+                <b class="caret hidden-sm hidden-xs"></b>
+                <span class="notification hidden-sm hidden-xs">5</span>
+                <p class="hidden-lg hidden-md">
+                  5 Notifications
+                  <b class="caret"></b>
+                </p>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Reporting started</a></li>
+                <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Media Club created</a></li>
+                <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Prom 2k17 this week</a></li>
+                <li><a href="notifications.html" style="color: rgb(81, 80, 82)">VD approaching</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="user.html">
+                <p>Account</p>
+              </a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <p>Settings<b class="caret"></b></p>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="mailto:garmand@outlook.com?Subject=Feedback">Feedback</a></li>
+                <li><a href="mailto:garmand@outlook.com?Subject=Report%20a%20problem">Report a problem</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li class="divider"></li>
+                <li><a href="#">About Aurora Learning Platform...</a></li>
+              </ul>
+            </li>
+
+            <li><a ng-click="mainCtrl.doLogout();" href="#">
+                <p>Log out</p>
+              </a></li>
+            <li class="separator hidden-lg hidden-md"></li>
+          </ul>
+        </div>
       </div>
-      <div class="navbar-collapse" id="navcol-1" ng-class="{collapse: isCollapsed}">
-        <ul class="nav navbar-nav navbar-left">
-          <li class="open"></li>
-          <li class="dropdown">
-            <a aria-expanded="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-globe"></i>
-              <b class="caret hidden-sm hidden-xs"></b>
-              <span class="notification hidden-sm hidden-xs">5</span>
-              <p class="hidden-lg hidden-md">
-                5 Notifications
-                <b class="caret"></b>
-              </p>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Reporting started</a></li>
-              <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Media Club created</a></li>
-              <li><a href="notifications.html" style="color: rgb(81, 80, 82)">Prom 2k17 this week</a></li>
-              <li><a href="notifications.html" style="color: rgb(81, 80, 82)">VD approaching</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="user.html"><p>Account</p></a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <p>Settings<b class="caret"></b></p>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="mailto:garmand@outlook.com?Subject=Feedback">Feedback</a></li>
-              <li><a href="mailto:garmand@outlook.com?Subject=Report%20a%20problem">Report a problem</a></li>
-              <li><a href="#">Terms and Conditions</a></li>
-              <li class="divider"></li>
-              <li><a href="#">About RHS Hub...</a></li>
-            </ul>
-          </li>
-
-          <li><a ng-click="mainCtrl.doLogout();" href="#"><p>Log out</p></a></li>
-          <li class="separator hidden-lg hidden-md"></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
 
+    <!-- Trending column -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="header">
+                <h4 class="title">What's Trending</h4>
+                <p class="category">School News</p>
+              </div>
+              <div class="content">
+                <div></div>
 
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="card">
-                        <div class="header">
-                          <h4 class="title">What's Trending</h4>
-                          <p class="category">School News</p>
-                        </div>
-                        <div class="content">
-                          <div ></div>
+                <div class="footer">
+                  <div class="legend"></div>
+                  <hr>
+                  <div class="stats">
+                    <i class="fa fa-clock-o"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                          <div class="footer">
-                            <div class="legend"></div>
-                            <hr>
-                            <div class="stats">
-                              <i class="fa fa-clock-o"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <!-- Tasks column -->
+          <div class="col-md-6" ng-controller="todoCtrl">
+            <div class="card">
+              <div class="header">
+                <h4 class="title">My Tasks</h4>
+                <p class="category">Things I should accomplish</p>
+              </div>
+              <div class="header">
+                <form ng-submit="todoAdd()">
+                  <input style="width:80%" type="text" ng-model="todoInput" size="50" placeholder="Add New">
+                  <input class="btn btn-success" type="submit" value="Add New" style="padding:4px">
+                </form>
+              </div>
+              <div class="content">
+                <div class="table-full-width">
+                  <table class="table">
+                    <tbody>
+                      <tr ng-repeat="x in todoList">
+                        <td>
+                          <label class="checkbox" ng-click="remove(x)">
+                            <span class="icons">
+                              <span class="first-icon fa fa-square-o"></span>
+                              <span class="second-icon fa fa-check-square-o"></span>
+                            </span>
+                            <span class="icons">
+                              <span class="first-icon fa fa-square-o"></span>
+                              <span class="second-icon fa fa-check-square-o"></span>
+                            </span>
+                            <input value="" data-toggle="checkbox" type="checkbox" ng-model="x.done">
+                          </label>
+                        </td>
+                        <td>
+                          <!-- <span ng-bind="x.todoText"></span> -->
+                          <a editable-text="x.todoText">{{ x.todoText || 'empty' }}</a>
+                        </td>
 
-										<div class="col-md-6" ng-controller="todoCtrl">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">My Tasks</h4>
-                                <p class="category">Things I should accomplish</p>
-                            </div>
-                            <div class="header">
-                              <form ng-submit="todoAdd()">
-                                <input style="width:80%" type="text" ng-model="todoInput" size="50" placeholder="Add New">
-                                <input class="btn btn-success" type="submit" value="Add New" style="padding:4px">
-                              </form>
-                            </div>
-                            <div class="content">
-                                <div class="table-full-width">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr ng-repeat="x in todoList">
-                                              <td>
-                                                  <label class="checkbox" ng-click="remove(x)">
-                                                      <span class="icons">
-                                                        <span class="first-icon fa fa-square-o"></span>
-                                                        <span class="second-icon fa fa-check-square-o"></span>
-                                                      </span>
-                                                      <span class="icons">
-                                                        <span class="first-icon fa fa-square-o"></span>
-                                                        <span class="second-icon fa fa-check-square-o"></span>
-                                                      </span>
-                                                      <input value="" data-toggle="checkbox" type="checkbox" ng-model="x.done">
-                                                  </label>
-                                              </td>
-                                              <td>
-                                                <!-- <span ng-bind="x.todoText"></span> -->
-                                                <a editable-text="x.todoText">{{ x.todoText || 'empty' }}</a>
-                                              </td>
+                        <!-- <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" title="Edit Task" class="btntes btn-info btn-simple btn-xs">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td> -->
 
-                                              <!-- <td class="td-actions text-right">
-                                                  <button type="button" rel="tooltip" title="Edit Task" class="btntes btn-info btn-simple btn-xs">
-                                                      <i class="fa fa-edit"></i>
-                                                  </button>
-                                                  <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                      <i class="fa fa-times"></i>
-                                                  </button>
-                                              </td> -->
+                        <td></td>
 
-                                              <td></td>
+                      </tr>
 
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <div class="footer">
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-history"></i> Updated 3 minutes ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </tbody>
+                  </table>
                 </div>
 
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card ">
-                            <div class="header">
-                                <h4 class="title">Timetable</h4>
-                                <p class="category">Class and Daily routines</p><br />
-                            </div>
-														<table class="table table-hover table-striped ">
-																<thead>
-																		<tr class="bg-success ">
-																			<th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th><th>SUN</th>
-																		</tr>
-																</thead>
-																<tbody>
-																		<tr>
-																			<td>Math</td><td>Phy</td><td>Math</td><td>Chem</td><td>Geo</td><td>Math</td><td>KIN</td>
-																		</tr>
-																		<tr>
-																			<td>Chem</td><td>Math</td><td>Math</td><td>Math</td><td>Geo</td><td>Geo</td><td>KIN</td>
-																		</tr>
-																		<tr>
-																			<td>Math</td><td>Math</td><td>Chem</td><td>Chem</td><td>Geo</td><td>Geo</td><td>Fra</td>
-																		</tr>
-																		<tr>
-																			<td>Fra</td><td>Eng</td><td>Chem</td><td>Chem</td><td>Eng</td><td>Phy</td><td>Hist</td>
-																		</tr>
-																		<tr>
-																			<td>Math</td><td>Rel</td><td>Phy</td><td>Phy</td><td>Math</td><td>Sport</td><td>Bio</td>
-																		</tr>
-																		<tr>
-																			<td>Rel</td><td>Rel</td><td>Rel</td><td>Phy</td><td>Chem</td><td>Bio</td><td>Bio</td>
-																		</tr>
-																</tbody>
-														</table>
-                            <div class="content">
-                                <div class="footer">
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> Calendar information Certified
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="footer">
+                  <hr>
+                  <div class="stats">
+                    <i class="fa fa-history"></i> Updated 3 minutes ago
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Testing the editor -->
-            <!-- <a ui-sref="tinymce">show filters</a>
+
+        <!-- Timetable -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="header">
+                <h4 class="title">Timetable</h4>
+                <p class="category">Class and Daily routines</p><br />
+              </div>
+              <table class="table table-hover table-striped " style="margin-bottom: 0px">
+                <thead>
+                  <tr class="bg-success ">
+                    <th>MON</th>
+                    <th>TUE</th>
+                    <th>WED</th>
+                    <th>THU</th>
+                    <th>FRI</th>
+                    <th>SAT</th>
+                    <th>SUN</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Math</td>
+                    <td>Phy</td>
+                    <td>Math</td>
+                    <td>Chem</td>
+                    <td>Geo</td>
+                    <td>Math</td>
+                    <td>KIN</td>
+                  </tr>
+                  <tr>
+                    <td>Chem</td>
+                    <td>Math</td>
+                    <td>Math</td>
+                    <td>Math</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>KIN</td>
+                  </tr>
+                  <tr>
+                    <td>Math</td>
+                    <td>Math</td>
+                    <td>Chem</td>
+                    <td>Chem</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>Fra</td>
+                  </tr>
+                  <tr>
+                    <td>Fra</td>
+                    <td>Eng</td>
+                    <td>Chem</td>
+                    <td>Chem</td>
+                    <td>Eng</td>
+                    <td>Phy</td>
+                    <td>Hist</td>
+                  </tr>
+                  <tr>
+                    <td>Math</td>
+                    <td>Rel</td>
+                    <td>Phy</td>
+                    <td>Phy</td>
+                    <td>Math</td>
+                    <td>Sport</td>
+                    <td>Bio</td>
+                  </tr>
+                  <tr>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Phy</td>
+                    <td>Chem</td>
+                    <td>Bio</td>
+                    <td>Bio</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="content">
+                <div class="footer">
+                  <div class="stats">
+                    <i class="fa fa-check"></i> Calendar information Certified
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing the editor -->
+        <!-- <a ui-sref="tinymce">show filters</a>
             <div class="col-md-12" ui-view></div>
              -->
 
-        </div>
       </div>
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="Dashboard.html">
-                                Home
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    <!-- © <script>document.write(new Date().getFullYear())</script> -->
-                     <a href="#">CE Technologies</a>, Made with love for a better future
-                </p>
-            </div>
-        </footer>
-
     </div>
+
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <nav class="pull-left">
+          <ul>
+            <li>
+              <a href="Dashboard.html">
+                Home
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright pull-right">
+          <!-- © <script>document.write(new Date().getFullYear())</script> -->
+          <a href="#">The KALM Armageddon Slayers Squad</a>, Made with love for a better future
+        </p>
+      </div>
+    </footer>
+
+  </div>
 </div>

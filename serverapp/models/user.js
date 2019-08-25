@@ -53,53 +53,65 @@ var passwordValidator = [
 ];
 
 var UserSchema = new Schema({
-    name : {
-        type: String,
-        required: true,
-        validate: nameValidator,
-    },
-    username : {
-        type: String,
-        lowercase: true,
-        required: true,
-        unique: true,
-        validate: usernameValidator,
-    },
-    password : {
-        type: String,
-        required: true,
-        validate: passwordValidator,
-    },
-    email: {
-        type: String,
-        required: true,
-        lowercase: true,
-        unique: true,
-        validate: emailValidator,
-    }
+  name: {
+    type: String,
+    required: true,
+    validate: nameValidator,
+  },
+  username: {
+    type: String,
+    lowercase: true,
+    required: true,
+    unique: true,
+    validate: usernameValidator,
+  },
+  password: {
+    type: String,
+    required: true,
+    validate: passwordValidator,
+  },
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+    unique: true,
+    validate: emailValidator,
+  }
 });
 
 // Encrypting the password
-UserSchema.pre('save', function(next) {
-    var user = this; //Whatever the user runs in the middleware
-    bcrypt.hash(user.password, null, null, function(err, hash){
-        user.password = hash;
-        next();
-    })
+UserSchema.pre('save', function (next) {
+  var user = this; //Whatever the user runs in the middleware
+  // bcrypt.hash(user.password, 10, function (err, hash) {
+  //   user.password = hash;
+  //   next();
+  // });
+
+  var hash = bcrypt.hashSync(user.password, 10);
+  user.password = hash;
+  next();
+
+  // try {
+  //   const hash = await bcrypt.hash(this.password, 10);
+  //   this.password = hash;
+  //   next();
+  // } catch (error) {
+  //   next(error);
+  // }
 });
 
 // This is used to csapitalize the names of my users
 UserSchema.plugin(titlize, {
-  paths: [ 'name' ], // Array of paths to titlize
+  paths: ['name'], // Array of paths to titlize
 });
 
 
 /* The following will create a custom method for logging in */
 
-UserSchema.methods.comparePasswords = function(password) {
-    /* password is the one that the user entered
-        this.password is the one we stored in the database */
-    return bcrypt.compareSync(password, this.password);
+UserSchema.methods.comparePasswords = function (password) {
+  /* password is the one that the user entered
+      this.password is the one we stored in the database */
+  return bcrypt.compareSync(password, this.password);
 };
 
 module.exports = mongoose.model('User', UserSchema);

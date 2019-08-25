@@ -31,14 +31,14 @@ var appRoutes = require('./serverapp/routes/api.js')(router);
 var social = require('./serverapp/passport/passport')(app, passport) ;
 
 app.use(morgan('dev')); // Hey, start logging the data/requests
-app.use(bodyParser.json()); // Start parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json({ limit: '50mb', extended: true })); // Start parsing application/json
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static(__dirname + '/public/app'));
 app.use('/api', appRoutes); // This comes last so that it cause the parsed data
 /* Also, the '/api' will help us differentiate the frontend routes from the
     backend ones by appending '// http://localhost:27017/api' right in middle. */
 
-mongoose.connect('mongodb://localhost:27017/AuroraLearningPatform', { useNewUrlParser: true }, function(err){
+mongoose.connect('mongodb://149.28.225.183:27018/AuroraLearningPlatform', { useNewUrlParser: true }, function(err){
     if (err) {
         console.log('Not connected to MongoDB. What happenned? \n => ' + err );
     }
